@@ -4,6 +4,7 @@ namespace MindworkingTest.Domain.Models;
 
 public sealed class ProjectTechnology
 {
+    public required int Id { get; set; }
     public required string Name { get; set; }
     public required ProficiencyLevels ProficiencyLevel { get; set; }
     public required int ProjectId { get; set; }

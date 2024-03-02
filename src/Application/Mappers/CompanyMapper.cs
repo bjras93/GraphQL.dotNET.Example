@@ -2,6 +2,8 @@ using MindworkingTest.Application.Common.Extensions;
 using MindworkingTest.Domain.Models;
 using MindworkingTest.Repository.Tables;
 
+namespace MindworkingTest.Application.Mappers;
+
 public static class CompanyMapper
 {
     public static Company Map(CompanyTable table)

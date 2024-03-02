@@ -12,6 +12,7 @@ public static class ProjectTechnologyMapper
         ProjectId = table.ProjectId,
         TechnologyId = table.ProjectId
     };
-    public static IEnumerable<ProjectTechnology> Map(IEnumerable<ProjectTechnologyTable> tableRows)
+    public static IEnumerable<ProjectTechnology> Map(
+        IEnumerable<ProjectTechnologyTable> tableRows)
     => tableRows.Select(Map).ToArray();
 }

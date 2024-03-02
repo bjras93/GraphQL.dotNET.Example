@@ -10,12 +10,14 @@ public sealed class CompanyQuery : ObjectGraphType
     public CompanyQuery(ICompanyService service)
     {
         Field<ListGraphType<CompanyType>>("companies")
+        .Description("Gets all companies")
         .ResolveAsync(async context =>
         {
             var projects = await service.GetAsync();
             return projects;
         });
         Field<ListGraphType<CompanyType>>("company")
+        .Description("Gets company by Id")
         .Argument<int>("id")
         .ResolveAsync(async context =>
         {

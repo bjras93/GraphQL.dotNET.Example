@@ -33,6 +33,12 @@ public interface ITechnologyService
     /// </returns>
     Task<IEnumerable<Technology>> GetAsync();
     /// <summary>
+    /// Gets <see cref="Technology" /> from repository by identifiers
+    /// </summary>
+    /// <param name="id">Identifier of the instance</param>
+    /// <returns>Array of <see cref="Technology" /> if any exists otherwise null</returns>
+    Task<IEnumerable<Technology>> GetAsync(IEnumerable<int> ids);
+    /// <summary>
     /// Gets <see cref="Technology"/> from repository
     /// </summary>
     /// <param name="name"></param>

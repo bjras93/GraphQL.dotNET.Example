@@ -40,16 +40,24 @@ public sealed class TechnologyService : ITechnologyService
     public async Task<IEnumerable<Technology>> GetAsync()
     {
         var rows = await Repository.GetAsync();
-
         var technologies = TechnologyMapper.Map(rows);
+
+        return technologies;
+    }
+
+    public async Task<IEnumerable<Technology>> GetAsync(IEnumerable<int> ids)
+    {
+        var rows = await Repository.GetAsync(ids);
+        var technologies = TechnologyMapper.Map(rows);
+
         return technologies;
     }
 
     public async Task<IEnumerable<Technology>> GetByNameAsync(string name)
     {
         var rows = await Repository.GetByAsync(t => t.Name == name);
-
         var technologies = TechnologyMapper.Map(rows);
+
         return technologies;
     }
 }

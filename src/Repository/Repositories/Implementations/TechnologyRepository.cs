@@ -1,6 +1,8 @@
+using System.Linq.Expressions;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using MindworkingTest.Repository.Contexts;
-using MindworkingTest.Repository.Models;
+using MindworkingTest.Repository.Tables;
 
 namespace MindworkingTest.Repository.Repositories.Implementations;
 
@@ -14,15 +16,16 @@ public sealed class TechnologyRepository :
     {
         Logger = logger;
     }
-    public async Task<TechnologyColumn?> CreateAsync(TechnologyColumn column)
+    public async Task<TechnologyTable?> CreateAsync(TechnologyTable table)
     {
         try
         {
-            var result = await Context.TechnologyColumns.AddAsync(column);
+            var result = await Context.TechnologyRows.AddAsync(table);
             var rowsAffected = await Context.SaveChangesAsync();
+
             if (rowsAffected == 0)
                 return null;
-            return column;
+            return table;
         }
         catch (Exception ex)
         {
@@ -31,11 +34,58 @@ public sealed class TechnologyRepository :
         }
     }
 
-    public async Task<TechnologyColumn?> GetAsync(int id)
+    public async Task<IEnumerable<TechnologyTable>> GetAsync(IEnumerable<int> ids)
     {
         try
         {
-            var result = await Context.TechnologyColumns.FindAsync(id);
+            var result = await Context.TechnologyRows
+                .Where(t => ids.Contains(t.Id))
+                .ToArrayAsync();
+
+            return result;
+        }
+        catch (Exception ex)
+        {
+            Logger.LogError(ex, "Received exception in {RepositoryName}", nameof(TechnologyRepository));
+            throw;
+        }
+    }
+
+    public async Task<TechnologyTable?> GetAsync(int id)
+    {
+        try
+        {
+            var result = await Context.TechnologyRows.FindAsync(id);
+            return result;
+        }
+        catch (Exception ex)
+        {
+            Logger.LogError(ex, "Received exception in {RepositoryName}", nameof(TechnologyRepository));
+            throw;
+        }
+    }
+    public async Task<IEnumerable<TechnologyTable>> GetAsync()
+    {
+        try
+        {
+            var result = await Context.TechnologyRows.ToArrayAsync();
+            return result;
+        }
+        catch (Exception ex)
+        {
+            Logger.LogError(ex, "Received exception in {RepositoryName}", nameof(TechnologyRepository));
+            throw;
+        }
+    }
+
+    public async Task<IEnumerable<TechnologyTable>> GetByAsync(Expression<Func<TechnologyTable, bool>> expression)
+    {
+        try
+        {
+            var result = await Context.TechnologyRows
+                .Where(expression)
+                .ToArrayAsync();
+
             return result;
         }
         catch (Exception ex)

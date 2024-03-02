@@ -1,12 +1,12 @@
 using GraphQL;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using MindworkingTest.API.Schemas;
+using MindworkingTest.Application.GraphQL;
 using MindworkingTest.Application.Services;
 using MindworkingTest.Application.Services.Implementations;
 using MindworkingTest.Repository.Extensions;
 
-namespace MindworkingTest.API.Extensions;
+namespace MindworkingTest.Application.Common.Extensions;
 
 public static class ServiceCollectionExtensions
 {
@@ -15,7 +15,18 @@ public static class ServiceCollectionExtensions
     {
         services
             .AddGraphQL(builder =>
-                builder.AddSchema<TechnologySchema>());
+
+                builder.ConfigureExecutionOptions(action =>
+                {
+#if DEBUG
+                    action.EnableMetrics = true;
+                    action.ThrowOnUnhandledException = true;
+#endif
+                })
+                .AddGraphTypes()
+                .AddSystemTextJson()
+                .AddSchema<RootSchema>()
+            );
 
         return services;
     }
@@ -26,11 +37,7 @@ public static class ServiceCollectionExtensions
         services
             .AddRepositories(configuration)
             .AddTransient<ITechnologyService, TechnologyService>()
-            .AddGraphQL(builder =>
-                builder
-                .AddGraphTypes()
-                .AddSystemTextJson()
-                .AddSchema<TechnologySchema>());
+            .AddTransient<IProjectService, ProjectService>();
 
         return services;
     }

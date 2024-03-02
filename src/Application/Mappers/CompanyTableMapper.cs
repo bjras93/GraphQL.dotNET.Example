@@ -15,6 +15,6 @@ public static class CompanyTableMapper
         EndDate = company.EndDate.ToStringOrNull("O")
     };
     public static IEnumerable<CompanyTable> Map(
-        IEnumerable<Company> tableRows)
-    => tableRows.Select(Map).ToArray();
+        IEnumerable<Company> companies)
+    => companies.Select(Map).ToArray();
 }

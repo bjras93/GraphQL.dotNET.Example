@@ -10,6 +10,14 @@ namespace MindworkingTest.Application.Common.Extensions;
 
 public static class ServiceCollectionExtensions
 {
+
+    /// <summary>
+    /// Adds services from external libraries
+    /// </summary>
+    /// <param name="services"></param>
+    /// <returns>
+    /// The <see cref="IServiceCollection"/> so that additional calls can be chained. 
+    /// </returns>
     public static IServiceCollection AddExternalServices(
         this IServiceCollection services)
     {
@@ -30,6 +38,13 @@ public static class ServiceCollectionExtensions
 
         return services;
     }
+    /// <summary>
+    /// Adds internal services
+    /// </summary>
+    /// <param name="services"></param>
+    /// <returns>
+    /// The <see cref="IServiceCollection"/> so that additional calls can be chained. 
+    /// </returns>
     public static IServiceCollection AddServices(
         this IServiceCollection services,
         IConfiguration configuration)

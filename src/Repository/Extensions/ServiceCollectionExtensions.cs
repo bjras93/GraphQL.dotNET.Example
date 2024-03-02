@@ -24,6 +24,7 @@ public static class ServiceCollectionExtensions
         services.RegisterRepository<ITechnologyRepository, TechnologyRepository>(configuration);
         services.RegisterRepository<IProjectRepository, ProjectRepository>(configuration);
         services.RegisterRepository<IProjectTechnologyRepository, ProjectTechnologyRepository>(configuration);
+        services.RegisterRepository<ICompanyRepository, CompanyRepository>(configuration);
 
         return services;
     }

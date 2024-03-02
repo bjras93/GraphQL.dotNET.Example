@@ -14,8 +14,8 @@ public sealed class TechnologyService : ITechnologyService
     }
     public async Task<Technology?> CreateAsync(Technology technology)
     {
-        var column = TechnologyColumnMapper.Map(technology);
-        var newTechnology = await Repository.CreateAsync(column);
+        var table = TechnologyTableMapper.Map(technology);
+        var newTechnology = await Repository.CreateAsync(table);
 
         if (newTechnology == null)
             return null;
@@ -35,5 +35,21 @@ public sealed class TechnologyService : ITechnologyService
         var mappedTechnology = TechnologyMapper.Map(technology);
 
         return mappedTechnology;
+    }
+
+    public async Task<IEnumerable<Technology>> GetAsync()
+    {
+        var rows = await Repository.GetAsync();
+
+        var technologies = TechnologyMapper.Map(rows);
+        return technologies;
+    }
+
+    public async Task<IEnumerable<Technology>> GetByNameAsync(string name)
+    {
+        var rows = await Repository.GetByAsync(t => t.Name == name);
+
+        var technologies = TechnologyMapper.Map(rows);
+        return technologies;
     }
 }

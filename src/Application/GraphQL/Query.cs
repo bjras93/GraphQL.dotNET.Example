@@ -1,4 +1,5 @@
 using GraphQL.Types;
+using MindworkingTest.Application.Features.Companies;
 using MindworkingTest.Application.Features.Projects;
 using MindworkingTest.Application.Features.Technologies;
 
@@ -11,5 +12,6 @@ public sealed class Query : ObjectGraphType
         Name = "Query";
         Field<TechnologyQuery>("technology").Resolve(context => new { });
         Field<ProjectQuery>("project").Resolve(context => new { });
+        Field<CompanyQuery>("company").Resolve(context => new { });
     }
 }

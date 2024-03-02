@@ -1,9 +1,10 @@
 using GraphQL.Types;
 using MindworkingTest.Application.Features.Companies.Types;
+using MindworkingTest.Application.Features.Educations.Types;
 using MindworkingTest.Application.Features.Projects.Types;
 using MindworkingTest.Domain.Models;
 
-namespace MindworkingTest.Application.Features.CurriculumVitaes.Types;
+namespace MindworkingTest.Application.Features.CurriculumVitarum.Types;
 
 public sealed class CurriculumVitaeType : ObjectGraphType<CurriculumVitae>
 {
@@ -26,6 +27,11 @@ public sealed class CurriculumVitaeType : ObjectGraphType<CurriculumVitae>
             .Description("Acquired skills")
             .Resolve(context =>
                 context.Source.Skills
+            );
+        Field<ListGraphType<EducationType>>("educations")
+            .Description("Educations")
+            .Resolve(context =>
+                context.Source.Educations
             );
     }
 }

@@ -1,31 +1,34 @@
 using GraphQL.Types;
-using MindworkingTest.Application.Features.CurriculumVitaes.Types;
+using MindworkingTest.Application.Features.CurriculumVitarum.Types;
 using MindworkingTest.Application.Services;
+using MindworkingTest.Domain.Enums;
 using MindworkingTest.Domain.Models;
 
-namespace MindworkingTest.Application.Features.CurriculumVitaes;
+namespace MindworkingTest.Application.Features.CurriculumVitarum;
 
 public sealed class CurriculumVitaeQuery : ObjectGraphType
 {
     public CurriculumVitaeQuery(
         IProjectService projectService,
         ICompanyService companyService,
-        ITechnologyService technologyService)
+        ISkillService skillService,
+        IEducationService educationService)
     {
-        Description = "Queries curriculum vitae";
         Field<CurriculumVitaeType>("curriculumVitae")
+        .Description("Queries curriculum vitae")
         .ResolveAsync(async context =>
         {
             var projects = await projectService.GetAsync();
             var companies = await companyService.GetAsync();
-            var technologies = await technologyService.GetAsync();
+            var skills = await skillService.GetAsync([SkillTypes.Technology]);
+            var educations = await educationService.GetAsync();
 
-            var skills = technologies.Select(t => new Skill { Name = t.Name });
             var curriculumVitae = new CurriculumVitae
             {
                 Companies = companies,
                 Projects = projects,
-                Skills = skills
+                Skills = skills,
+                Educations = educations
             };
             return curriculumVitae;
         });

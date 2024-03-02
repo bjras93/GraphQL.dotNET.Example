@@ -1,3 +1,5 @@
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using MindworkingTest.Repository.Contexts;
 using MindworkingTest.Repository.Tables;
 
@@ -6,22 +8,62 @@ namespace MindworkingTest.Repository.Repositories.Implementations;
 public sealed class CompanyRepository :
     RepositoryBase<MindworkingTestContext>, ICompanyRepository
 {
-    public CompanyRepository(MindworkingTestContext context) : base(context)
+    private ILogger<CompanyRepository> Logger { get; }
+
+    public CompanyRepository(
+        ILogger<CompanyRepository> logger,
+        MindworkingTestContext context) : base(context)
     {
+        Logger = logger;
     }
 
-    public Task<CompanyTable?> CreateAsync(CompanyTable table)
+    public async Task<CompanyTable?> CreateAsync(CompanyTable table)
     {
-        throw new NotImplementedException();
+        try
+        {
+            _ = await Context.CompanyRows.AddAsync(table);
+            var rowsAffected = await Context.SaveChangesAsync();
+
+            if (rowsAffected == 0)
+                return null;
+
+            return table;
+        }
+        catch (Exception ex)
+        {
+            Logger.LogError(ex, "Received exception in {RepositoryName}", nameof(TechnologyRepository));
+            throw;
+        }
     }
 
-    public Task<IEnumerable<CompanyTable>> GetAsync()
+    public async Task<IEnumerable<CompanyTable>> GetAsync()
     {
-        throw new NotImplementedException();
+        try
+        {
+            var companies = await Context.CompanyRows
+                .ToArrayAsync();
+
+            return companies;
+        }
+        catch (Exception ex)
+        {
+            Logger.LogError(ex, "Received exception in {RepositoryName}", nameof(TechnologyRepository));
+            throw;
+        }
     }
 
-    public Task<CompanyTable?> GetAsync(int id)
+    public async Task<CompanyTable?> GetAsync(int id)
     {
-        throw new NotImplementedException();
+        try
+        {
+            var company = await Context.CompanyRows.FindAsync(id);
+
+            return company;
+        }
+        catch (Exception ex)
+        {
+            Logger.LogError(ex, "Received exception in {RepositoryName}", nameof(TechnologyRepository));
+            throw;
+        }
     }
 }

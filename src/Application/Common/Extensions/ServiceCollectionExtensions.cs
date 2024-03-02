@@ -38,7 +38,9 @@ public static class ServiceCollectionExtensions
             .AddRepositories(configuration)
             .AddTransient<ITechnologyService, TechnologyService>()
             .AddTransient<ICompanyService, CompanyService>()
-            .AddTransient<IProjectService, ProjectService>();
+            .AddTransient<IProjectService, ProjectService>()
+            .AddTransient<ISkillService, SkillService>()
+            .AddTransient<IEducationService, EducationService>();
 
         return services;
     }

@@ -7,7 +7,7 @@
 ### Optional
 - ORM (EF-Core) ✅
 - git repository ✅
-- Automated testing ❌
+- Automated testing ✅
 - Mutations ✅
 
 ## Introduction

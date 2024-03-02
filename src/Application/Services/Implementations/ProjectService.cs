@@ -1,3 +1,4 @@
+using Microsoft.Extensions.Logging;
 using MindworkingTest.Application.Mappers;
 using MindworkingTest.Domain.Models;
 using MindworkingTest.Repository.Repositories;
@@ -11,21 +12,23 @@ public sealed class ProjectService : IProjectService
     private readonly IProjectRepository Repository;
     private readonly ITechnologyRepository TechnologyRepository;
     private readonly IProjectTechnologyRepository ProjectTechnologyRepository;
+    private readonly ILogger<ProjectService> Logger;
     public ProjectService(
         IProjectRepository repository,
         ITechnologyRepository technologyRepository,
-        IProjectTechnologyRepository projectTechnologyRepository
+        IProjectTechnologyRepository projectTechnologyRepository,
+        ILogger<ProjectService> logger
     )
     {
         Repository = repository;
         TechnologyRepository = technologyRepository;
         ProjectTechnologyRepository = projectTechnologyRepository;
+        Logger = logger;
     }
 
     public async Task<Project?> CreateAsync(Project project)
     {
         var row = ProjectTableMapper.Map(project);
-
 
         var newProject = await Repository.CreateAsync(row);
 
@@ -52,8 +55,10 @@ public sealed class ProjectService : IProjectService
         var projectTechnologyTable = await ProjectTechnologyRepository.CreateAsync(projectTechnology);
 
         if (projectTechnologyTable == null)
+        {
+            Logger.LogWarning("Unable to create project technology reference on project {ProjectId}", id);
             return null;
-
+        }
         var mappedProjectTechnology = ProjectTechnologyMapper.Map(projectTechnologyTable);
 
         return mappedProjectTechnology;

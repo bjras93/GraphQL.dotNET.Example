@@ -60,13 +60,11 @@ public sealed class SkillService : ISkillService
     }
     public async Task<bool> ValidateReferenceAsync(Skill skill)
     {
-        switch (skill.ReferenceType)
+        return skill.ReferenceType switch
         {
-            case SkillTypes.Technology:
-                return await ValidateTechnologyAsync(skill.ReferenceId);
-            default:
-                return false;
-        }
+            SkillTypes.Technology => await ValidateTechnologyAsync(skill.ReferenceId),
+            _ => false,
+        };
     }
     public async Task<bool> ValidateTechnologyAsync(int id)
     {

@@ -1,4 +1,4 @@
-using MindworkingTest.API.Extensions;
+using MindworkingTest.Application.Common.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 var services = builder.Services;

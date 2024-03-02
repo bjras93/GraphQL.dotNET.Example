@@ -1,14 +1,16 @@
 using MindworkingTest.Domain.Models;
-using MindworkingTest.Repository.Models;
+using MindworkingTest.Repository.Tables;
 
 namespace MindworkingTest.Application.Mappers;
 
 public static class TechnologyMapper
 {
-    public static Technology Map(TechnologyColumn column)
+    public static Technology Map(TechnologyTable table)
     => new()
     {
-        Id = column.Id,
-        Name = column.Name
+        Id = table.Id,
+        Name = table.Name
     };
+    public static IEnumerable<Technology> Map(IEnumerable<TechnologyTable> tableRows)
+    => tableRows.Select(Map).ToArray();
 }

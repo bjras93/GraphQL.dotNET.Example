@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
-using MindworkingTest.Repository.Models;
 using MindworkingTest.Repository.Options;
+using MindworkingTest.Repository.Tables;
 
 namespace MindworkingTest.Repository.Contexts;
 
@@ -19,5 +19,17 @@ public sealed class MindworkingTestContext : DbContext
         Path = path;
     }
     protected override void OnConfiguring(DbContextOptionsBuilder options) => options.UseSqlite($"Data Source={Path}");
-    public DbSet<TechnologyColumn> TechnologyColumns { get; set; }
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        base.OnModelCreating(modelBuilder);
+
+        modelBuilder.Entity<ProjectTable>()
+                 .HasMany(p => p.ProjectTechnologies)
+                 .WithOne()
+                 .HasForeignKey(p => p.ProjectId);
+
+    }
+    public DbSet<TechnologyTable> TechnologyRows { get; set; }
+    public DbSet<ProjectTable> ProjectRows { get; set; }
+    public DbSet<ProjectTechnologyTable> ProjectTechnologyRows { get; set; }
 }

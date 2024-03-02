@@ -16,7 +16,7 @@ public sealed class ProjectType : ObjectGraphType<Project>
         Field(t => t.Description, nullable: false)
             .Description("Project description");
         Field(t => t.StartDate, nullable: false)
-            .Description("Project description");
+            .Description("Project start date");
         Field(t => t.EndDate, nullable: true)
             .Description("Project end date");
         Field<ListGraphType<TechnologyType>>("technologies")

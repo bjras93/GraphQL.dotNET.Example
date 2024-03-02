@@ -8,7 +8,7 @@ public sealed class SkillType : ObjectGraphType<Skill>
     public SkillType()
     {
         Name = nameof(Skill);
-        Description = "Skills to list on a curriculum vitae";
+        Description = "Skills acquired";
         Field(t => t.Name, nullable: false)
             .Description("Name of the skill");
     }

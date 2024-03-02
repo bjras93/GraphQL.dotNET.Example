@@ -11,6 +11,7 @@ public sealed class Query : ObjectGraphType
     public Query()
     {
         Name = "Query";
+        Description = "Queries for Curriculum Vitae data";
         Field<TechnologyQuery>("Technologies").Resolve(context => new { });
         Field<ProjectQuery>("Projects").Resolve(context => new { });
         Field<CompanyQuery>("Companies").Resolve(context => new { });

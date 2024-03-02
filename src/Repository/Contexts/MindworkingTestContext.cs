@@ -33,4 +33,6 @@ public sealed class MindworkingTestContext : DbContext
     public DbSet<ProjectTable> ProjectRows { get; set; }
     public DbSet<ProjectTechnologyTable> ProjectTechnologyRows { get; set; }
     public DbSet<CompanyTable> CompanyRows { get; set; }
+    public DbSet<SkillTable> SkillRows { get; set; }
+    public DbSet<EducationTable> EducationRows { get; set; }
 }

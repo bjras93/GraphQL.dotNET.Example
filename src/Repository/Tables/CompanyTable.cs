@@ -14,5 +14,5 @@ public sealed class CompanyTable
     [Column("start_date")]
     public required string StartDate { get; set; }
     [Column("end_date")]
-    public required string EndDate { get; set; }
+    public string? EndDate { get; set; }
 }

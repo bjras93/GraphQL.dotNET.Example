@@ -16,6 +16,8 @@
 - To run application type following
   - `dotnet run --project src/API`
   - [graphiql](http://localhost:5000/ui/graphiql)
+- To run test
+  - `dotnet test`
 - Primary resources used to solve the assignment
   - https://graphql-dotnet.github.io/
   - https://graphql.org/learn/

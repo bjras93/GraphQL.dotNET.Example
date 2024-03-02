@@ -4,7 +4,7 @@ using MindworkingTest.Application.Features.Projects.Types;
 using MindworkingTest.Application.Services;
 using MindworkingTest.Domain.Models;
 
-namespace MindworkingTest.API.Features.Technologies;
+namespace MindworkingTest.Application.Features.Projects;
 
 public sealed class ProjectMutation : ObjectGraphType
 {

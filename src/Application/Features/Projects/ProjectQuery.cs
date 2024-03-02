@@ -3,7 +3,7 @@ using GraphQL.Types;
 using MindworkingTest.Application.Features.Projects.Types;
 using MindworkingTest.Application.Services;
 
-namespace MindworkingTest.API.Queries;
+namespace MindworkingTest.Application.Features.Projects;
 
 public sealed class ProjectQuery : ObjectGraphType
 {

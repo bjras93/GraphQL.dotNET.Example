@@ -1,4 +1,5 @@
 using GraphQL.Types;
+using MindworkingTest.Application.Features.Companies;
 using MindworkingTest.Application.Features.Projects;
 using MindworkingTest.Application.Features.Technologies;
 
@@ -10,5 +11,6 @@ public sealed class Mutation : ObjectGraphType
     {
         Field<TechnologyMutation>("technology").Resolve(context => new { });
         Field<ProjectMutation>("project").Resolve(context => new { });
+        Field<CompanyMutation>("company").Resolve(context => new { });
     }
 }

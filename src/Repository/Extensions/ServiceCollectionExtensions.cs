@@ -21,10 +21,13 @@ public static class ServiceCollectionExtensions
         this IServiceCollection services,
         IConfiguration configuration)
     {
-        services.RegisterRepository<ITechnologyRepository, TechnologyRepository>(configuration);
-        services.RegisterRepository<IProjectRepository, ProjectRepository>(configuration);
-        services.RegisterRepository<IProjectTechnologyRepository, ProjectTechnologyRepository>(configuration);
-        services.RegisterRepository<ICompanyRepository, CompanyRepository>(configuration);
+        services
+        .RegisterRepository<ITechnologyRepository, TechnologyRepository>(configuration)
+        .RegisterRepository<IProjectRepository, ProjectRepository>(configuration)
+        .RegisterRepository<IProjectTechnologyRepository, ProjectTechnologyRepository>(configuration)
+        .RegisterRepository<ICompanyRepository, CompanyRepository>(configuration)
+        .RegisterRepository<ISkillRepository, SkillRepository>(configuration)
+        .RegisterRepository<IEducationRepository, EducationRepository>(configuration);
 
         return services;
     }

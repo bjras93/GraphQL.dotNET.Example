@@ -11,6 +11,7 @@ public static class TechnologyMapper
         Id = table.Id,
         Name = table.Name
     };
-    public static IEnumerable<Technology> Map(IEnumerable<TechnologyTable> tableRows)
+    public static IEnumerable<Technology> Map(
+        IEnumerable<TechnologyTable> tableRows)
     => tableRows.Select(Map).ToArray();
 }

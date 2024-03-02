@@ -16,7 +16,7 @@ public sealed class CompanyQuery : ObjectGraphType
             var projects = await service.GetAsync();
             return projects;
         });
-        Field<ListGraphType<CompanyType>>("company")
+        Field<CompanyType>("company")
         .Description("Gets company by Id")
         .Argument<int>("id")
         .ResolveAsync(async context =>

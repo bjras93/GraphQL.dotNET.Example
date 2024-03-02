@@ -13,7 +13,7 @@ public static class ProjectTableMapper
         Title = project.Title,
         Description = project.Description,
         StartDate = project.StartDate.ToString(),
-        EndDate = project.EndDate.ToStringOrNull("o")
+        EndDate = project.EndDate.ToStringOrNull("O")
     };
     public static IEnumerable<ProjectTable> Map(
         IEnumerable<Project> projects)

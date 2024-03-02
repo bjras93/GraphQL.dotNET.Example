@@ -31,7 +31,7 @@ public sealed class CompanyRepository :
         }
         catch (Exception ex)
         {
-            Logger.LogError(ex, "Received exception in {RepositoryName}", nameof(TechnologyRepository));
+            Logger.LogError(ex, "Received exception in {RepositoryName}", nameof(CompanyRepository));
             throw;
         }
     }
@@ -47,7 +47,7 @@ public sealed class CompanyRepository :
         }
         catch (Exception ex)
         {
-            Logger.LogError(ex, "Received exception in {RepositoryName}", nameof(TechnologyRepository));
+            Logger.LogError(ex, "Received exception in {RepositoryName}", nameof(CompanyRepository));
             throw;
         }
     }
@@ -62,7 +62,7 @@ public sealed class CompanyRepository :
         }
         catch (Exception ex)
         {
-            Logger.LogError(ex, "Received exception in {RepositoryName}", nameof(TechnologyRepository));
+            Logger.LogError(ex, "Received exception in {RepositoryName}", nameof(CompanyRepository));
             throw;
         }
     }

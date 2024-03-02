@@ -22,6 +22,8 @@ public static class ServiceCollectionExtensions
         IConfiguration configuration)
     {
         services.RegisterRepository<ITechnologyRepository, TechnologyRepository>(configuration);
+        services.RegisterRepository<IProjectRepository, ProjectRepository>(configuration);
+        services.RegisterRepository<IProjectTechnologyRepository, ProjectTechnologyRepository>(configuration);
 
         return services;
     }
@@ -61,7 +63,7 @@ public static class ServiceCollectionExtensions
     {
         services.Configure<DatabaseOptions>(options =>
             configuration.GetSection(DatabaseOptions.Name).Bind(options));
-        var service = services.Last();
+
         return services;
     }
 }

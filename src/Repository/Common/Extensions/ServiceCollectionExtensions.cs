@@ -1,12 +1,12 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using MindworkingTest.Repository.Common.Options;
 using MindworkingTest.Repository.Contexts;
-using MindworkingTest.Repository.Options;
 using MindworkingTest.Repository.Repositories;
 using MindworkingTest.Repository.Repositories.Implementations;
 
-namespace MindworkingTest.Repository.Extensions;
+namespace MindworkingTest.Repository.Common.Extensions;
 
 public static class ServiceCollectionExtensions
 {

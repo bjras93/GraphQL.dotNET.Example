@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
-using MindworkingTest.Repository.Options;
+using MindworkingTest.Repository.Common.Options;
 using MindworkingTest.Repository.Tables;
 
 namespace MindworkingTest.Repository.Contexts;

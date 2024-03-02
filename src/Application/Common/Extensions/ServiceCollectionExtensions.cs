@@ -4,7 +4,7 @@ using Microsoft.Extensions.DependencyInjection;
 using MindworkingTest.Application.GraphQL;
 using MindworkingTest.Application.Services;
 using MindworkingTest.Application.Services.Implementations;
-using MindworkingTest.Repository.Extensions;
+using MindworkingTest.Repository.Common.Extensions;
 
 namespace MindworkingTest.Application.Common.Extensions;
 

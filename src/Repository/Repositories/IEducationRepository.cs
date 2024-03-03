@@ -19,7 +19,7 @@ public interface IEducationRepository
     ///     Gets all instances from repository
     /// </summary>
     /// <returns>
-    ///     Array of <see cref="EducationTable" />
+    ///     List of <see cref="EducationTable" />
     /// </returns>
     Task<IEnumerable<EducationTable>> GetAsync();
     /// <summary>

@@ -14,11 +14,11 @@ public interface IProjectTechnologyRepository
     /// <summary>
     /// Gets instances by project identifier from repository
     /// </summary>
-    /// <returns>Array of <see cref="ProjectTechnologyTable" /></returns>
+    /// <returns>List of <see cref="ProjectTechnologyTable" /></returns>
     Task<IEnumerable<ProjectTechnologyTable>> GetByProjectAsync(int projectId);
     /// <summary>
     /// Gets all instances that matches expression
     /// </summary>
-    /// <returns>Array of <see cref="TechnologyTable" /></returns>
+    /// <returns>List of <see cref="TechnologyTable" /></returns>
     Task<IEnumerable<ProjectTechnologyTable>> GetByAsync(Expression<Func<ProjectTechnologyTable, bool>> expression);
 }

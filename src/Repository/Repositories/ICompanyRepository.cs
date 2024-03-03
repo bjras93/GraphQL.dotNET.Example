@@ -19,7 +19,7 @@ public interface ICompanyRepository
     ///     Gets all instances from repository
     /// </summary>
     /// <returns>
-    ///     Array of <see cref="CompanyTable" />
+    ///     List of <see cref="CompanyTable" />
     /// </returns>
     Task<IEnumerable<CompanyTable>> GetAsync();
     /// <summary>

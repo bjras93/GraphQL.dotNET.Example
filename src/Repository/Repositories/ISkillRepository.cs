@@ -19,7 +19,7 @@ public interface ISkillRepository
     ///     Gets all instances from repository
     /// </summary>
     /// <returns>
-    ///     Array of <see cref="SkillTable" />
+    ///     List of <see cref="SkillTable" />
     /// </returns>
     Task<IEnumerable<SkillTable>> GetAsync();
     /// <summary>

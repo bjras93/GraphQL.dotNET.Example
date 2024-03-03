@@ -15,7 +15,7 @@ public interface ITechnologyRepository
     /// Gets <see cref="TechnologyTable" /> from repository by identifiers
     /// </summary>
     /// <param name="id">Identifier of the instance</param>
-    /// <returns>Array of <see cref="TechnologyTable" /> if any exists otherwise null</returns>
+    /// <returns>List of <see cref="TechnologyTable" /> if any exists otherwise null</returns>
     Task<IEnumerable<TechnologyTable>> GetAsync(IEnumerable<int> ids);
     /// <summary>
     /// Gets <see cref="TechnologyTable" /> from repository by identifier
@@ -26,11 +26,11 @@ public interface ITechnologyRepository
     /// <summary>
     /// Gets all instances repository
     /// </summary>
-    /// <returns>Array of <see cref="TechnologyTable" /></returns>
+    /// <returns>List of <see cref="TechnologyTable" /></returns>
     Task<IEnumerable<TechnologyTable>> GetAsync();
     /// <summary>
     /// Gets all instances that matches expression
     /// </summary>
-    /// <returns>Array of <see cref="TechnologyTable" /></returns>
+    /// <returns>List of <see cref="TechnologyTable" /></returns>
     Task<IEnumerable<TechnologyTable>> GetByAsync(Expression<Func<TechnologyTable, bool>> expression);
 }

@@ -19,7 +19,7 @@ public sealed class SkillRepository :
     {
         try
         {
-            _ = await Context.SkillRows.AddAsync(table);
+            Context.SkillRows.Add(table);
             var rowsAffected = await Context.SaveChangesAsync();
 
             if (rowsAffected == 0)
@@ -39,7 +39,7 @@ public sealed class SkillRepository :
         try
         {
             var skills = await Context.SkillRows
-                .ToArrayAsync();
+                .ToListAsync();
 
             return skills;
         }

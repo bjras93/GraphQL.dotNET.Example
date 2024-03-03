@@ -23,16 +23,17 @@ public sealed class ProjectTechnologyRepository :
     {
         try
         {
-            var result = await Context.ProjectTechnologyRows.AddAsync(table);
+            Context.ProjectTechnologyRows.Add(table);
             var rowsAffected = await Context.SaveChangesAsync();
 
             if (rowsAffected == 0)
                 return null;
+
             return table;
         }
         catch (Exception ex)
         {
-            Logger.LogError(ex, "Received exception in {RepositoryName}", nameof(TechnologyRepository));
+            Logger.LogError(ex, "Received exception in {RepositoryName}", nameof(ProjectTechnologyRepository));
             throw;
         }
     }
@@ -42,15 +43,15 @@ public sealed class ProjectTechnologyRepository :
     {
         try
         {
-            var result = await Context.ProjectTechnologyRows
+            var projectTechnologies = await Context.ProjectTechnologyRows
                 .Where(p => p.ProjectId == projectId)
-                .ToArrayAsync();
+                .ToListAsync();
 
-            return result;
+            return projectTechnologies;
         }
         catch (Exception ex)
         {
-            Logger.LogError(ex, "Received exception in {RepositoryName}", nameof(TechnologyRepository));
+            Logger.LogError(ex, "Received exception in {RepositoryName}", nameof(ProjectTechnologyRepository));
             throw;
         }
     }
@@ -60,15 +61,15 @@ public sealed class ProjectTechnologyRepository :
     {
         try
         {
-            var result = await Context.ProjectTechnologyRows
+            var projectTechnologies = await Context.ProjectTechnologyRows
                 .Where(expression)
-                .ToArrayAsync();
+                .ToListAsync();
 
-            return result;
+            return projectTechnologies;
         }
         catch (Exception ex)
         {
-            Logger.LogError(ex, "Received exception in {RepositoryName}", nameof(TechnologyRepository));
+            Logger.LogError(ex, "Received exception in {RepositoryName}", nameof(ProjectTechnologyRepository));
             throw;
         }
     }

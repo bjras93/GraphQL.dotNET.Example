@@ -21,16 +21,17 @@ public sealed class ProjectRepository : RepositoryBase<MindworkingTestContext>, 
     {
         try
         {
-            var result = await Context.ProjectRows.AddAsync(table);
+            Context.ProjectRows.Add(table);
             var rowsAffected = await Context.SaveChangesAsync();
 
             if (rowsAffected == 0)
                 return null;
+
             return table;
         }
         catch (Exception ex)
         {
-            Logger.LogError(ex, "Received exception in {RepositoryName}", nameof(TechnologyRepository));
+            Logger.LogError(ex, "Received exception in {RepositoryName}", nameof(ProjectRepository));
             throw;
         }
     }
@@ -39,15 +40,15 @@ public sealed class ProjectRepository : RepositoryBase<MindworkingTestContext>, 
     {
         try
         {
-            var result = await Context.ProjectRows
+            var projects = await Context.ProjectRows
                 .Include(p => p.ProjectTechnologies)
-                .ToArrayAsync();
+                .ToListAsync();
 
-            return result;
+            return projects;
         }
         catch (Exception ex)
         {
-            Logger.LogError(ex, "Received exception in {RepositoryName}", nameof(TechnologyRepository));
+            Logger.LogError(ex, "Received exception in {RepositoryName}", nameof(ProjectRepository));
             throw;
         }
     }
@@ -56,13 +57,13 @@ public sealed class ProjectRepository : RepositoryBase<MindworkingTestContext>, 
     {
         try
         {
-            var result = await Context.ProjectRows.Where(expression).ToArrayAsync();
+            var projects = await Context.ProjectRows.Where(expression).ToListAsync();
 
-            return result;
+            return projects;
         }
         catch (Exception ex)
         {
-            Logger.LogError(ex, "Received exception in {RepositoryName}", nameof(TechnologyRepository));
+            Logger.LogError(ex, "Received exception in {RepositoryName}", nameof(ProjectRepository));
             throw;
         }
     }

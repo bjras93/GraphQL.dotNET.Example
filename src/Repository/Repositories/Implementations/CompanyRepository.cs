@@ -21,7 +21,7 @@ public sealed class CompanyRepository :
     {
         try
         {
-            _ = await Context.CompanyRows.AddAsync(table);
+            Context.CompanyRows.Add(table);
             var rowsAffected = await Context.SaveChangesAsync();
 
             if (rowsAffected == 0)
@@ -41,7 +41,7 @@ public sealed class CompanyRepository :
         try
         {
             var companies = await Context.CompanyRows
-                .ToArrayAsync();
+                .ToListAsync();
 
             return companies;
         }

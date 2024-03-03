@@ -19,7 +19,7 @@ public sealed class EducationRepository :
     {
         try
         {
-            _ = await Context.EducationRows.AddAsync(table);
+            Context.EducationRows.Add(table);
             var rowsAffected = await Context.SaveChangesAsync();
 
             if (rowsAffected == 0)
@@ -39,7 +39,7 @@ public sealed class EducationRepository :
         try
         {
             var educations = await Context.EducationRows
-                .ToArrayAsync();
+                .ToListAsync();
 
             return educations;
         }

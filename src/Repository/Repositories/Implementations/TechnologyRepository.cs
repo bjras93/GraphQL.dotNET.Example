@@ -20,7 +20,7 @@ public sealed class TechnologyRepository :
     {
         try
         {
-            var result = await Context.TechnologyRows.AddAsync(table);
+            Context.TechnologyRows.Add(table);
             var rowsAffected = await Context.SaveChangesAsync();
 
             if (rowsAffected == 0)
@@ -38,11 +38,11 @@ public sealed class TechnologyRepository :
     {
         try
         {
-            var result = await Context.TechnologyRows
+            var technologies = await Context.TechnologyRows
                 .Where(t => ids.Contains(t.Id))
-                .ToArrayAsync();
+                .ToListAsync();
 
-            return result;
+            return technologies;
         }
         catch (Exception ex)
         {
@@ -55,8 +55,9 @@ public sealed class TechnologyRepository :
     {
         try
         {
-            var result = await Context.TechnologyRows.FindAsync(id);
-            return result;
+            var technology = await Context.TechnologyRows.FindAsync(id);
+
+            return technology;
         }
         catch (Exception ex)
         {
@@ -68,8 +69,10 @@ public sealed class TechnologyRepository :
     {
         try
         {
-            var result = await Context.TechnologyRows.ToArrayAsync();
-            return result;
+            var technologies = await Context.TechnologyRows
+                .ToListAsync();
+
+            return technologies;
         }
         catch (Exception ex)
         {
@@ -82,11 +85,11 @@ public sealed class TechnologyRepository :
     {
         try
         {
-            var result = await Context.TechnologyRows
+            var technologies = await Context.TechnologyRows
                 .Where(expression)
-                .ToArrayAsync();
+                .ToListAsync();
 
-            return result;
+            return technologies;
         }
         catch (Exception ex)
         {

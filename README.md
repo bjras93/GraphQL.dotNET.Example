@@ -1,4 +1,5 @@
 # MindworkingTest
+![workflow](https://github.com/bjras93/MindworkingTest/actions/workflows/dotnet.yml/badge.svg)
 
 ## Task
 - Return an overall list of companies/projects/education/skills ✅

@@ -21,8 +21,8 @@ public static class CompanyTableMapper
     /// <summary>
     /// Creates new instances of <see cref="CompanyTable"/> from enumerable <see cref="Company"/>
     /// </summary>
-    /// <returns>Array of <see cref="CompanyTable"/></returns>
+    /// <returns>List of <see cref="CompanyTable"/></returns>
     public static IEnumerable<CompanyTable> Map(
         IEnumerable<Company> companies)
-    => companies.Select(Map).ToArray();
+    => companies.Select(Map).ToList();
 }

@@ -22,8 +22,8 @@ public static class ProjectMapper
     /// <summary>
     /// Creates new instances of <see cref="Project"/> from enumarable <see cref="ProjectTable"/>
     /// </summary>
-    /// <returns>Array of <see cref="Project"/></returns>
+    /// <returns>List of <see cref="Project"/></returns>
     public static IEnumerable<Project> Map(
         IEnumerable<ProjectTable> tableRows)
-    => tableRows.Select(Map).ToArray();
+    => tableRows.Select(Map).ToList();
 }

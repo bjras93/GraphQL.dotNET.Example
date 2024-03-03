@@ -21,8 +21,8 @@ public static class EducationTableMapper
     /// <summary>
     /// Creates new instances of <see cref="EducationTable"/> from enumerable <see cref="Education"/>
     /// </summary>
-    /// <returns>Array of <see cref="EducationTable"/></returns>
+    /// <returns>List of <see cref="EducationTable"/></returns>
     public static IEnumerable<EducationTable> Map(
         IEnumerable<Education> educations)
-    => educations.Select(Map).ToArray();
+    => educations.Select(Map).ToList();
 }

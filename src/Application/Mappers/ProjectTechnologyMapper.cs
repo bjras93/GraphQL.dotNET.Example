@@ -19,8 +19,8 @@ public static class ProjectTechnologyMapper
     /// <summary>
     /// Creates new instances of <see cref="ProjectTechnology"/> from enumerable <see cref="ProjectTechnology"/>
     /// </summary>
-    /// <returns>Array of <see cref="ProjectTechnology"/></returns>
+    /// <returns>List of <see cref="ProjectTechnology"/></returns>
     public static IEnumerable<ProjectTechnology> Map(
         IEnumerable<ProjectTechnologyTable> tableRows)
-    => tableRows.Select(Map).ToArray();
+    => tableRows.Select(Map).ToList();
 }

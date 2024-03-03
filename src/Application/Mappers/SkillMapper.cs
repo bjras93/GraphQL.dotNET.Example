@@ -21,8 +21,8 @@ public static class SkillMapper
     /// <summary>
     /// Creates new instances of <see cref="Skill"/> from enumerable <see cref="SkillTable"/>
     /// </summary>
-    /// <returns>Array of <see cref="Skill"/></returns>
+    /// <returns>List of <see cref="Skill"/></returns>
     public static IEnumerable<Skill> Map(
         IEnumerable<SkillTable> tableRows)
-    => tableRows.Select(Map).ToArray();
+    => tableRows.Select(Map).ToList();
 }

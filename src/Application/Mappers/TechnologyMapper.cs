@@ -18,8 +18,8 @@ public static class TechnologyMapper
     /// <summary>
     /// Creates new instances of <see cref="Technology"/> from enumerable <see cref="TechnologyTable"/>
     /// </summary>
-    /// <returns>Array of <see cref="Technology"/></returns>
+    /// <returns>List of <see cref="Technology"/></returns>
     public static IEnumerable<Technology> Map(
         IEnumerable<TechnologyTable> tableRows)
-    => tableRows.Select(Map).ToArray();
+    => tableRows.Select(Map).ToList();
 }

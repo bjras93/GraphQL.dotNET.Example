@@ -16,10 +16,10 @@ public interface ISkillService
     /// </returns>
     Task<Skill?> CreateAsync(Skill skill);
     /// <summary>
-    /// Gets <see cref="Skill"/> as array from repository by <see cref="SkillTypes"/> 
+    /// Gets <see cref="Skill"/> as list from repository by <see cref="SkillTypes"/> 
     /// </summary>
     /// <returns>
-    /// Array of instances in the repository
+    /// List of instances in the repository
     /// </returns>
     Task<IEnumerable<Skill>> GetAsync(IEnumerable<SkillTypes> skillTypes);
 }

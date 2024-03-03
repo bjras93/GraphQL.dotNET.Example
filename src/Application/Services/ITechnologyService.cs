@@ -23,12 +23,12 @@ public interface ITechnologyService
     /// </returns>
     Task<Technology?> GetAsync(int id);
     /// <summary>
-    /// Gets all <see cref="Technology"/> as array from repository
+    /// Gets all <see cref="Technology"/> as list from repository
     /// </summary>
     /// <returns>
-    /// Array of <see cref="Technology"/>
+    /// List of <see cref="Technology"/>
     /// <para>
-    /// Empty array when none present
+    /// Empty list when none present
     /// </para>
     /// </returns>
     Task<IEnumerable<Technology>> GetAsync();
@@ -36,16 +36,16 @@ public interface ITechnologyService
     /// Gets <see cref="Technology" /> from repository by identifiers
     /// </summary>
     /// <param name="id">Identifier of the instance</param>
-    /// <returns>Array of <see cref="Technology" /> if any exists otherwise null</returns>
+    /// <returns>List of <see cref="Technology" /> if any exists otherwise null</returns>
     Task<IEnumerable<Technology>> GetAsync(IEnumerable<int> ids);
     /// <summary>
     /// Gets <see cref="Technology"/> from repository
     /// </summary>
     /// <param name="name"></param>
     /// <returns>
-    /// Array of <see cref="Technology"/> 
+    /// List of <see cref="Technology"/> 
     /// <para>
-    /// Empty array when no matches
+    /// Empty list when no matches
     /// </para>
     /// </returns>
     Task<IEnumerable<Technology>> GetByNameAsync(string name);

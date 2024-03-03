@@ -70,7 +70,7 @@ public sealed class ProjectService : IProjectService
 
         var technologyIds = rows
             .SelectMany(rows => rows.ProjectTechnologies.Select(p => p.TechnologyId))
-            .ToArray();
+            .ToList();
         var technologies = await TechnologyRepository.GetAsync(technologyIds);
 
         var projects = rows.Select(r =>
@@ -86,6 +86,6 @@ public sealed class ProjectService : IProjectService
             return project;
         });
 
-        return projects.ToArray();
+        return projects.ToList();
     }
 }

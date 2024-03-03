@@ -15,10 +15,10 @@ public interface ICompanyService
     /// </returns>
     Task<Company?> CreateAsync(Company company);
     /// <summary>
-    /// Gets all <see cref="Company"/> as array from repository
+    /// Gets all <see cref="Company"/> as list from repository
     /// </summary>
     /// <returns>
-    /// Array of instances in the repository
+    /// List of instances in the repository
     /// </returns>
     Task<IEnumerable<Company>> GetAsync();
     /// <summary>

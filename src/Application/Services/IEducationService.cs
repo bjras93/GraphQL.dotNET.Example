@@ -15,10 +15,10 @@ public interface IEducationService
     /// </returns>
     Task<Education?> CreateAsync(Education education);
     /// <summary>
-    /// Gets all <see cref="Education"/> as array from repository
+    /// Gets all <see cref="Education"/> as list from repository
     /// </summary>
     /// <returns>
-    /// Array of instances in the repository
+    /// List of instances in the repository
     /// </returns>
     Task<IEnumerable<Education>> GetAsync();
 }

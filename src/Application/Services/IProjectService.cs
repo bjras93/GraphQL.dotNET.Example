@@ -15,10 +15,10 @@ public interface IProjectService
     /// </returns>
     Task<Project?> CreateAsync(Project project);
     /// <summary>
-    /// Gets all <see cref="Project"/> as array from repository
+    /// Gets all <see cref="Project"/> as list from repository
     /// </summary>
     /// <returns>
-    /// Array of instances in the repository
+    /// List of instances in the repository
     /// </returns>
     Task<IEnumerable<Project>> GetAsync();
     /// <summary>

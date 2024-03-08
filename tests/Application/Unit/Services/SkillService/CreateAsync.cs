@@ -7,7 +7,7 @@ using NSubstitute.ReturnsExtensions;
 
 namespace MindworkingTest.Application.Unit;
 
-public class UnitTest1
+public sealed class CreateAsync
 {
     private readonly Setup Setup = new();
     [Fact]

@@ -6,8 +6,8 @@ using MindworkingTest.Repository.Repositories;
 
 public sealed class CompanyService : ICompanyService
 {
-    public ILogger<CompanyService> Logger;
-    public ICompanyRepository Repository;
+    public readonly ILogger<CompanyService> Logger;
+    public readonly ICompanyRepository Repository;
     public CompanyService(
         ILogger<CompanyService> logger,
         ICompanyRepository repository

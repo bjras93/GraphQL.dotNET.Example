@@ -8,7 +8,7 @@ public class AddProjectTechnologyInputType : InputObjectGraphType<ProjectTechnol
     public AddProjectTechnologyInputType()
     {
         Name = "AddProjectTechnologyInput";
-        Field<NonNullGraphType<IntGraphType>>("technologyId");
-        Field<NonNullGraphType<IntGraphType>>("projectId");
+        Field<NonNullGraphType<IntGraphType>>(nameof(ProjectTechnology.ProjectId));
+        Field<NonNullGraphType<IntGraphType>>(nameof(ProjectTechnology.TechnologyId));
     }
 }

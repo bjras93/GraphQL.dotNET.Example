@@ -9,10 +9,8 @@ public sealed class ProjectTechnologyType : ObjectGraphType<ProjectTechnology>
     {
         Name = nameof(ProjectType);
         Description = "Projects worked on";
-        Field(t => t.Id, nullable: false);
-        Field(t => t.ProjectId, nullable: false)
-            .Description("Project identifier");
-        Field(t => t.TechnologyId, nullable: false)
-            .Description("Technology identifier");
+        Field<NonNullGraphType<IntGraphType>>(nameof(ProjectTechnology.Id));
+        Field<NonNullGraphType<IntGraphType>>(nameof(ProjectTechnology.ProjectId));
+        Field<NonNullGraphType<IntGraphType>>(nameof(ProjectTechnology.TechnologyId));
     }
 }

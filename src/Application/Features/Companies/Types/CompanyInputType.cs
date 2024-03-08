@@ -1,7 +1,7 @@
 using GraphQL.Types;
-using MindworkingTest.Domain.Models;
+using Domain.Models;
 
-namespace MindworkingTest.Application.Features.Companies.Types;
+namespace Application.Features.Companies.Types;
 
 public class CompanyInputType : InputObjectGraphType<Company>
 {

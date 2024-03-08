@@ -1,9 +1,9 @@
 using GraphQL;
 using GraphQL.Types;
-using MindworkingTest.Application.Features.Technologies.Types;
-using MindworkingTest.Application.Services;
+using Application.Features.Technologies.Types;
+using Application.Services;
 
-namespace MindworkingTest.Application.Features.Technologies;
+namespace Application.Features.Technologies;
 
 public sealed class TechnologyQuery : ObjectGraphType
 {

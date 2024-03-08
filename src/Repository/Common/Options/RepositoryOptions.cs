@@ -1,4 +1,4 @@
-namespace MindworkingTest.Repository.Common.Options;
+namespace Repository.Common.Options;
 
 public sealed class DatabaseOptions
 {

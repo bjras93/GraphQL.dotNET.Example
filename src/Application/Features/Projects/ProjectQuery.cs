@@ -1,9 +1,9 @@
 using GraphQL;
 using GraphQL.Types;
-using MindworkingTest.Application.Features.Projects.Types;
-using MindworkingTest.Application.Services;
+using Application.Features.Projects.Types;
+using Application.Services;
 
-namespace MindworkingTest.Application.Features.Projects;
+namespace Application.Features.Projects;
 
 public sealed class ProjectQuery : ObjectGraphType
 {

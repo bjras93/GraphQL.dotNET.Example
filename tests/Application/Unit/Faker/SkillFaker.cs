@@ -1,8 +1,8 @@
 using Bogus;
-using MindworkingTest.Domain.Enums;
-using MindworkingTest.Domain.Models;
+using Domain.Enums;
+using Domain.Models;
 
-namespace MindworkingTest.Application.Unit.Faker;
+namespace Application.Unit.Faker;
 
 public sealed class SkillFaker : Faker<Skill>
 {

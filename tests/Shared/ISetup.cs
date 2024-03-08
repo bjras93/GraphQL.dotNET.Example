@@ -1,4 +1,4 @@
-﻿namespace MindworkingTest.Shared;
+﻿namespace Shared;
 
 public interface ISetup<TService>
 {

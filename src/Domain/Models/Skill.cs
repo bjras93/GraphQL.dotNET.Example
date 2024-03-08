@@ -1,6 +1,6 @@
-using MindworkingTest.Domain.Enums;
+using Domain.Enums;
 
-namespace MindworkingTest.Domain.Models;
+namespace Domain.Models;
 
 public sealed class Skill
 {

@@ -1,10 +1,10 @@
 using GraphQL.Types;
-using MindworkingTest.Application.Features.CurriculumVitarum.Types;
-using MindworkingTest.Application.Services;
-using MindworkingTest.Domain.Enums;
-using MindworkingTest.Domain.Models;
+using Application.Features.CurriculumVitarum.Types;
+using Application.Services;
+using Domain.Enums;
+using Domain.Models;
 
-namespace MindworkingTest.Application.Features.CurriculumVitarum;
+namespace Application.Features.CurriculumVitarum;
 
 public sealed class CurriculumVitaeQuery : ObjectGraphType
 {

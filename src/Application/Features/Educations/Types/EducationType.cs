@@ -1,7 +1,7 @@
 using GraphQL.Types;
-using MindworkingTest.Domain.Models;
+using Domain.Models;
 
-namespace MindworkingTest.Application.Features.Educations.Types;
+namespace Application.Features.Educations.Types;
 
 public sealed class EducationType : ObjectGraphType<Education>
 {

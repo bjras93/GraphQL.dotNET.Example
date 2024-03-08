@@ -1,15 +1,15 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
-using MindworkingTest.Repository.Common.Options;
-using MindworkingTest.Repository.Tables;
+using Repository.Common.Options;
+using Repository.Tables;
 
-namespace MindworkingTest.Repository.Contexts;
+namespace Repository.Contexts;
 
-public sealed class MindworkingTestContext : DbContext
+public sealed class TestContext : DbContext
 {
-    public string Name { get; } = "MindworkingTest";
+    public string Name { get; } = "test_db";
     public string Path { get; init; }
-    public MindworkingTestContext(
+    public TestContext(
         IOptions<DatabaseOptions> options)
     {
         options.Value.ConnectionStrings.TryGetValue(Name, out var path);

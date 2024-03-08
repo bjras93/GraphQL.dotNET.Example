@@ -1,6 +1,6 @@
-using MindworkingTest.Repository.Tables;
+using Repository.Tables;
 
-namespace MindworkingTest.Repository.Repositories;
+namespace Repository.Repositories;
 
 public interface IEducationRepository
 {

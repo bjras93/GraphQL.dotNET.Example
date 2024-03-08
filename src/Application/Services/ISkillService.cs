@@ -1,7 +1,7 @@
-using MindworkingTest.Domain.Enums;
-using MindworkingTest.Domain.Models;
+using Domain.Enums;
+using Domain.Models;
 
-namespace MindworkingTest.Application.Services;
+namespace Application.Services;
 
 public interface ISkillService
 {

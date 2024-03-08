@@ -1,10 +1,10 @@
-using MindworkingTest.Application.Services;
-using MindworkingTest.Application.Services.Implementations;
-using MindworkingTest.Repository.Repositories;
-using MindworkingTest.Shared;
+using Application.Services;
+using Application.Services.Implementations;
+using Repository.Repositories;
+using Shared;
 using NSubstitute;
 
-namespace MindworkingTest.Application.Unit;
+namespace Application.Unit;
 
 public sealed class Setup : ISetup<SkillService>
 {

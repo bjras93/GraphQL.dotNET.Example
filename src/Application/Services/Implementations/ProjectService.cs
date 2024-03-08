@@ -1,10 +1,10 @@
 using Microsoft.Extensions.Logging;
-using MindworkingTest.Application.Mappers;
-using MindworkingTest.Domain.Models;
-using MindworkingTest.Repository.Repositories;
-using MindworkingTest.Repository.Tables;
+using Application.Mappers;
+using Domain.Models;
+using Repository.Repositories;
+using Repository.Tables;
 
-namespace MindworkingTest.Application.Services.Implementations;
+namespace Application.Services.Implementations;
 
 public sealed class ProjectService : IProjectService
 {

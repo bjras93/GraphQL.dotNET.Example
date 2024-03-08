@@ -1,10 +1,10 @@
 using GraphQL;
 using GraphQL.Types;
-using MindworkingTest.Application.Features.Companies.Types;
-using MindworkingTest.Application.Services;
-using MindworkingTest.Domain.Models;
+using Application.Features.Companies.Types;
+using Application.Services;
+using Domain.Models;
 
-namespace MindworkingTest.Application.Features.Companies;
+namespace Application.Features.Companies;
 
 public sealed class CompanyMutation : ObjectGraphType
 {

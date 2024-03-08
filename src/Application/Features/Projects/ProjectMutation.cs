@@ -1,10 +1,10 @@
 using GraphQL;
 using GraphQL.Types;
-using MindworkingTest.Application.Features.Projects.Types;
-using MindworkingTest.Application.Services;
-using MindworkingTest.Domain.Models;
+using Application.Features.Projects.Types;
+using Application.Services;
+using Domain.Models;
 
-namespace MindworkingTest.Application.Features.Projects;
+namespace Application.Features.Projects;
 
 public sealed class ProjectMutation : ObjectGraphType
 {

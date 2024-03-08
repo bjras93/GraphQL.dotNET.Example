@@ -1,4 +1,4 @@
-namespace MindworkingTest.Repository.Repositories;
+namespace Repository.Repositories;
 
 public abstract class RepositoryBase<TContext>
 {

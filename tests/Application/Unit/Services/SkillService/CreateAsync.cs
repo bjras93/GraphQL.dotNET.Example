@@ -1,11 +1,11 @@
-using MindworkingTest.Application.Mappers;
-using MindworkingTest.Application.Unit.Faker;
-using MindworkingTest.Domain.Enums;
-using MindworkingTest.Repository.Tables;
+using Application.Unit.Faker;
+using Domain.Enums;
+using Repository.Tables;
 using NSubstitute;
 using NSubstitute.ReturnsExtensions;
+using Application.Mappers;
 
-namespace MindworkingTest.Application.Unit;
+namespace Application.Unit;
 
 public sealed class CreateAsync
 {

@@ -1,10 +1,10 @@
 using GraphQL;
 using GraphQL.Types;
-using MindworkingTest.Application.Features.Technologies.Types;
-using MindworkingTest.Application.Services;
-using MindworkingTest.Domain.Models;
+using Application.Features.Technologies.Types;
+using Application.Services;
+using Domain.Models;
 
-namespace MindworkingTest.Application.Features.Technologies;
+namespace Application.Features.Technologies;
 
 public sealed class TechnologyMutation : ObjectGraphType
 {

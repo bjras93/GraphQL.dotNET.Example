@@ -1,8 +1,8 @@
 using GraphQL.Types;
-using MindworkingTest.Domain.Enums;
-using MindworkingTest.Domain.Models;
+using Domain.Enums;
+using Domain.Models;
 
-namespace MindworkingTest.Application.Features.Skills.Types;
+namespace Application.Features.Skills.Types;
 
 public sealed class SkillInputType : InputObjectGraphType<Skill>
 {

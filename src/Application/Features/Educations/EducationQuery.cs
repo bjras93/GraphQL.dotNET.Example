@@ -1,8 +1,8 @@
 using GraphQL.Types;
-using MindworkingTest.Application.Features.Educations.Types;
-using MindworkingTest.Application.Services;
+using Application.Features.Educations.Types;
+using Application.Services;
 
-namespace MindworkingTest.Application.Features.Educations;
+namespace Application.Features.Educations;
 
 public sealed class EducationQuery : ObjectGraphType
 {

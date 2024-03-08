@@ -1,7 +1,7 @@
 using GraphQL.Types;
-using MindworkingTest.Domain.Models;
+using Domain.Models;
 
-namespace MindworkingTest.Application.Features.Technologies.Types;
+namespace Application.Features.Technologies.Types;
 
 public sealed class TechnologyType : ObjectGraphType<Technology>
 {

@@ -1,8 +1,8 @@
 using Microsoft.Extensions.Logging;
-using MindworkingTest.Application.Mappers;
-using MindworkingTest.Application.Services;
-using MindworkingTest.Domain.Models;
-using MindworkingTest.Repository.Repositories;
+using Application.Mappers;
+using Application.Services;
+using Domain.Models;
+using Repository.Repositories;
 
 public sealed class CompanyService : ICompanyService
 {

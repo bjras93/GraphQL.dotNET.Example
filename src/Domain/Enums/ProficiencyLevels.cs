@@ -1,4 +1,4 @@
-namespace MindworkingTest.Domain.Enums;
+namespace Domain.Enums;
 
 public enum ProficiencyLevels
 {

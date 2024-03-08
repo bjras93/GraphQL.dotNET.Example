@@ -1,18 +1,18 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
-using MindworkingTest.Repository.Contexts;
-using MindworkingTest.Repository.Tables;
+using Repository.Contexts;
+using Repository.Tables;
 
-namespace MindworkingTest.Repository.Repositories.Implementations;
+namespace Repository.Repositories.Implementations;
 
 public sealed class CompanyRepository :
-    RepositoryBase<MindworkingTestContext>, ICompanyRepository
+    RepositoryBase<TestContext>, ICompanyRepository
 {
     private ILogger<CompanyRepository> Logger { get; }
 
     public CompanyRepository(
         ILogger<CompanyRepository> logger,
-        MindworkingTestContext context) : base(context)
+        TestContext context) : base(context)
     {
         Logger = logger;
     }

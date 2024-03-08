@@ -1,7 +1,7 @@
 using Bogus;
-using MindworkingTest.Domain.Models;
+using Domain.Models;
 
-namespace MindworkingTest.Application.Unit.Faker;
+namespace Application.Unit.Faker;
 
 public sealed class TechnologyFaker : Faker<Technology>
 {

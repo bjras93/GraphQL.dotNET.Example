@@ -1,7 +1,7 @@
 using GraphQL.Types;
-using MindworkingTest.Domain.Models;
+using Domain.Models;
 
-namespace MindworkingTest.Application.Features.Projects.Types;
+namespace Application.Features.Projects.Types;
 
 public class AddProjectTechnologyInputType : InputObjectGraphType<ProjectTechnology>
 {

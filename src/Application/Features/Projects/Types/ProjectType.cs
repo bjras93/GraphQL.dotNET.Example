@@ -1,8 +1,8 @@
 using GraphQL.Types;
-using MindworkingTest.Application.Features.Technologies.Types;
-using MindworkingTest.Domain.Models;
+using Application.Features.Technologies.Types;
+using Domain.Models;
 
-namespace MindworkingTest.Application.Features.Projects.Types;
+namespace Application.Features.Projects.Types;
 
 public sealed class ProjectType : ObjectGraphType<Project>
 {

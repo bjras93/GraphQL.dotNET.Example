@@ -1,8 +1,8 @@
-using MindworkingTest.Application.Mappers;
-using MindworkingTest.Domain.Models;
-using MindworkingTest.Repository.Repositories;
+using Application.Mappers;
+using Domain.Models;
+using Repository.Repositories;
 
-namespace MindworkingTest.Application.Services.Implementations;
+namespace Application.Services.Implementations;
 
 public sealed class EducationService : IEducationService
 {

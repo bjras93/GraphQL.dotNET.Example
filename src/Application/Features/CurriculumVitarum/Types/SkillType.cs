@@ -1,7 +1,7 @@
 using GraphQL.Types;
-using MindworkingTest.Domain.Models;
+using Domain.Models;
 
-namespace MindworkingTest.Application.Features.CurriculumVitarum.Types;
+namespace Application.Features.CurriculumVitarum.Types;
 
 public sealed class SkillType : ObjectGraphType<Skill>
 {

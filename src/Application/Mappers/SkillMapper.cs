@@ -1,8 +1,8 @@
-using MindworkingTest.Domain.Enums;
-using MindworkingTest.Domain.Models;
-using MindworkingTest.Repository.Tables;
+using Domain.Enums;
+using Domain.Models;
+using Repository.Tables;
 
-namespace MindworkingTest.Application.Mappers;
+namespace Application.Mappers;
 
 public static class SkillMapper
 {

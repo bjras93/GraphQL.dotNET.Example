@@ -5,21 +5,21 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{35346E26-A12E-4FDB-852E-96988C5C17E9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MindworkingTest.Domain", "src\Domain\MindworkingTest.Domain.csproj", "{0D26BA8B-26C1-4EBC-99A0-B3BD439A31E6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "src\Domain\Domain.csproj", "{0D26BA8B-26C1-4EBC-99A0-B3BD439A31E6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MindworkingTest.API", "src\API\MindworkingTest.API.csproj", "{6C101A99-B1C9-4C6B-9222-DE0FF654FA78}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API", "src\API\API.csproj", "{6C101A99-B1C9-4C6B-9222-DE0FF654FA78}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MindworkingTest.Application", "src\Application\MindworkingTest.Application.csproj", "{206ADB77-C015-4F36-9A20-CBD3887A975F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "src\Application\Application.csproj", "{206ADB77-C015-4F36-9A20-CBD3887A975F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MindworkingTest.Repository", "src\Repository\MindworkingTest.Repository.csproj", "{9AB4AA07-32D2-4D75-AAF5-05AE9A503864}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository", "src\Repository\Repository.csproj", "{9AB4AA07-32D2-4D75-AAF5-05AE9A503864}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{EF400CEE-E57B-445C-BE53-6EF9FC135A07}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{F735B03C-8307-4401-9D69-8B682AE05475}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MindworkingTest.Application.Unit", "tests\Application\Unit\MindworkingTest.Application.Unit.csproj", "{58F5F9D8-8EF7-4924-9FAD-15D2240887C1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application.Unit", "tests\Application\Unit\Application.Unit.csproj", "{58F5F9D8-8EF7-4924-9FAD-15D2240887C1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MindworkingTest.Shared", "tests\Shared\MindworkingTest.Shared.csproj", "{58463551-7BD5-411E-9260-62C085D98A59}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared", "tests\Shared\Shared.csproj", "{58463551-7BD5-411E-9260-62C085D98A59}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

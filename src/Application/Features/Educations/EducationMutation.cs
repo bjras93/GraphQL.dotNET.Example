@@ -1,10 +1,10 @@
 using GraphQL;
 using GraphQL.Types;
-using MindworkingTest.Application.Features.Educations.Types;
-using MindworkingTest.Application.Services;
-using MindworkingTest.Domain.Models;
+using Application.Features.Educations.Types;
+using Application.Services;
+using Domain.Models;
 
-namespace MindworkingTest.Application.Features.Educations;
+namespace Application.Features.Educations;
 
 public sealed class EducationMutation : ObjectGraphType
 {

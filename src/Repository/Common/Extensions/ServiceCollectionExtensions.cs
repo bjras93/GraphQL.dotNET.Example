@@ -1,12 +1,12 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using MindworkingTest.Repository.Common.Options;
-using MindworkingTest.Repository.Contexts;
-using MindworkingTest.Repository.Repositories;
-using MindworkingTest.Repository.Repositories.Implementations;
+using Repository.Common.Options;
+using Repository.Contexts;
+using Repository.Repositories;
+using Repository.Repositories.Implementations;
 
-namespace MindworkingTest.Repository.Common.Extensions;
+namespace Repository.Common.Extensions;
 
 public static class ServiceCollectionExtensions
 {
@@ -49,7 +49,7 @@ public static class ServiceCollectionExtensions
         if (!RepositoryConfigIsSetUp)
         {
             services.AddRepositoryOptions(configuration);
-            services.AddDbContext<MindworkingTestContext>();
+            services.AddDbContext<TestContext>();
             RepositoryConfigIsSetUp = true;
         }
         services.AddTransient<TInterface, TImplementation>();

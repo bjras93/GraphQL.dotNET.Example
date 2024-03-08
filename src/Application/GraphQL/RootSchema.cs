@@ -1,6 +1,6 @@
 using GraphQL.Types;
 
-namespace MindworkingTest.Application.GraphQL;
+namespace Application.GraphQL;
 
 public sealed class RootSchema : Schema
 {

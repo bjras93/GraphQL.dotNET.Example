@@ -1,12 +1,12 @@
 using GraphQL;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using MindworkingTest.Application.GraphQL;
-using MindworkingTest.Application.Services;
-using MindworkingTest.Application.Services.Implementations;
-using MindworkingTest.Repository.Common.Extensions;
+using Application.GraphQL;
+using Application.Services;
+using Application.Services.Implementations;
+using Repository.Common.Extensions;
 
-namespace MindworkingTest.Application.Common.Extensions;
+namespace Application.Common.Extensions;
 
 public static class ServiceCollectionExtensions
 {

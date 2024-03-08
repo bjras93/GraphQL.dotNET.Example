@@ -1,18 +1,18 @@
 using System.Linq.Expressions;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
-using MindworkingTest.Repository.Contexts;
-using MindworkingTest.Repository.Tables;
+using Repository.Contexts;
+using Repository.Tables;
 
-namespace MindworkingTest.Repository.Repositories.Implementations;
+namespace Repository.Repositories.Implementations;
 
 public sealed class TechnologyRepository :
-    RepositoryBase<MindworkingTestContext>, ITechnologyRepository
+    RepositoryBase<TestContext>, ITechnologyRepository
 {
     private ILogger<TechnologyRepository> Logger { get; }
     public TechnologyRepository(
         ILogger<TechnologyRepository> logger,
-        MindworkingTestContext context) : base(context)
+        TestContext context) : base(context)
     {
         Logger = logger;
     }

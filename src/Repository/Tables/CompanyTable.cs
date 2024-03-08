@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace MindworkingTest.Repository.Tables;
+namespace Repository.Tables;
 
 [Table("companies")]
 public sealed class CompanyTable

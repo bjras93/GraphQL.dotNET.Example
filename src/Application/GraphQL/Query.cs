@@ -1,11 +1,11 @@
 using GraphQL.Types;
-using MindworkingTest.Application.Features.Companies;
-using MindworkingTest.Application.Features.CurriculumVitarum;
-using MindworkingTest.Application.Features.Educations;
-using MindworkingTest.Application.Features.Projects;
-using MindworkingTest.Application.Features.Technologies;
+using Application.Features.Companies;
+using Application.Features.CurriculumVitarum;
+using Application.Features.Educations;
+using Application.Features.Projects;
+using Application.Features.Technologies;
 
-namespace MindworkingTest.Application.GraphQL;
+namespace Application.GraphQL;
 
 public sealed class Query : ObjectGraphType
 {

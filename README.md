@@ -1,5 +1,5 @@
-# MindworkingTest
-![workflow](https://github.com/bjras93/MindworkingTest/actions/workflows/dotnet.yml/badge.svg)
+# Graphql dotnet example
+![workflow](https://github.com/bjras93/GraphQL.dotNET.Example/actions/workflows/dotnet.yml/badge.svg)
 
 ## Task
 - Return an overall list of companies/projects/education/skills ✅

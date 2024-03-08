@@ -1,6 +1,6 @@
-using MindworkingTest.Domain.Models;
+using Domain.Models;
 
-namespace MindworkingTest.Application.Services;
+namespace Application.Services;
 
 public interface ITechnologyService
 {

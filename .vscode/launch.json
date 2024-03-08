@@ -5,10 +5,10 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "C#: MindworkingTest.API Debug",
+            "name": "C#: API Debug",
             "type": "dotnet",
             "request": "launch",
-            "projectPath": "${workspaceFolder}/src/API/MindworkingTest.API.csproj"
+            "projectPath": "${workspaceFolder}/src/API/API.csproj"
         }
     ]
 }

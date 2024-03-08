@@ -1,11 +1,11 @@
 using GraphQL;
 using GraphQL.Types;
-using MindworkingTest.Application.Features.Projects.Types;
-using MindworkingTest.Application.Features.Skills.Types;
-using MindworkingTest.Application.Services;
-using MindworkingTest.Domain.Models;
+using Application.Features.Projects.Types;
+using Application.Features.Skills.Types;
+using Application.Services;
+using Domain.Models;
 
-namespace MindworkingTest.Application.Features.Skills;
+namespace Application.Features.Skills;
 
 public sealed class SkillMutation : ObjectGraphType
 {

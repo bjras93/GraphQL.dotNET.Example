@@ -1,6 +1,6 @@
 using System.Diagnostics.CodeAnalysis;
 
-namespace MindworkingTest.Application.Common.Extensions;
+namespace Application.Common.Extensions;
 
 public static class DateTimeExtension
 {

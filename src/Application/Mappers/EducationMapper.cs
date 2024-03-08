@@ -1,8 +1,8 @@
-using MindworkingTest.Application.Common.Extensions;
-using MindworkingTest.Domain.Models;
-using MindworkingTest.Repository.Tables;
+using Application.Common.Extensions;
+using Domain.Models;
+using Repository.Tables;
 
-namespace MindworkingTest.Application.Mappers;
+namespace Application.Mappers;
 
 public static class EducationMapper
 {

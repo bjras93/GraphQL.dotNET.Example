@@ -4,15 +4,12 @@ using Repository.Repositories;
 
 namespace Application.Services.Implementations;
 
-public sealed class EducationService : IEducationService
+public sealed class EducationService(
+    IEducationRepository repository
+    ) : IEducationService
 {
-    private readonly IEducationRepository Repository;
-    public EducationService(
-        IEducationRepository repository
-    )
-    {
-        Repository = repository;
-    }
+    private readonly IEducationRepository Repository = repository;
+
     public async Task<Education?> CreateAsync(
         Education education)
     {

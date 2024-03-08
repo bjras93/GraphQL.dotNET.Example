@@ -4,14 +4,11 @@ using Repository.Repositories;
 
 namespace Application.Services.Implementations;
 
-public sealed class TechnologyService : ITechnologyService
+public sealed class TechnologyService(
+    ITechnologyRepository repository) : ITechnologyService
 {
-    public ITechnologyRepository Repository;
-    public TechnologyService(
-        ITechnologyRepository repository)
-    {
-        Repository = repository;
-    }
+    public ITechnologyRepository Repository = repository;
+
     public async Task<Technology?> CreateAsync(Technology technology)
     {
         var table = TechnologyTableMapper.Map(technology);

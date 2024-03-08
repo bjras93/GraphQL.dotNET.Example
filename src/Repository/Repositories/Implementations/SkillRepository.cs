@@ -4,16 +4,12 @@ using Repository.Contexts;
 using Repository.Repositories;
 using Repository.Tables;
 
-public sealed class SkillRepository :
-    RepositoryBase<TestContext>, ISkillRepository
+public sealed class SkillRepository(
+    ILogger<SkillRepository> logger,
+    TestContext context) :
+    RepositoryBase<TestContext>(context), ISkillRepository
 {
-    private ILogger<SkillRepository> Logger { get; }
-    public SkillRepository(
-        ILogger<SkillRepository> logger,
-        TestContext context) : base(context)
-    {
-        Logger = logger;
-    }
+    private ILogger<SkillRepository> Logger { get; } = logger;
 
     public async Task<SkillTable?> CreateAsync(SkillTable table)
     {

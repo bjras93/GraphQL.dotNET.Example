@@ -4,18 +4,14 @@ using Application.Services;
 using Domain.Models;
 using Repository.Repositories;
 
-public sealed class CompanyService : ICompanyService
+public sealed class CompanyService(
+    ILogger<CompanyService> logger,
+    ICompanyRepository repository
+    ) : ICompanyService
 {
-    public readonly ILogger<CompanyService> Logger;
-    public readonly ICompanyRepository Repository;
-    public CompanyService(
-        ILogger<CompanyService> logger,
-        ICompanyRepository repository
-    )
-    {
-        Logger = logger;
-        Repository = repository;
-    }
+    public readonly ILogger<CompanyService> Logger = logger;
+    public readonly ICompanyRepository Repository = repository;
+
     public async Task<Company?> CreateAsync(Company company)
     {
         var row = CompanyTableMapper.Map(company);

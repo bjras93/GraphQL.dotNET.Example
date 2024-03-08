@@ -4,16 +4,12 @@ using Repository.Contexts;
 using Repository.Repositories;
 using Repository.Tables;
 
-public sealed class EducationRepository :
-    RepositoryBase<TestContext>, IEducationRepository
+public sealed class EducationRepository(
+    ILogger<EducationRepository> logger,
+    TestContext context) :
+    RepositoryBase<TestContext>(context), IEducationRepository
 {
-    private ILogger<EducationRepository> Logger { get; }
-    public EducationRepository(
-        ILogger<EducationRepository> logger,
-        TestContext context) : base(context)
-    {
-        Logger = logger;
-    }
+    private ILogger<EducationRepository> Logger { get; } = logger;
 
     public async Task<EducationTable?> CreateAsync(EducationTable table)
     {

@@ -5,17 +5,12 @@ using Repository.Tables;
 
 namespace Repository.Repositories.Implementations;
 
-public sealed class CompanyRepository :
-    RepositoryBase<TestContext>, ICompanyRepository
+public sealed class CompanyRepository(
+    ILogger<CompanyRepository> logger,
+    TestContext context) :
+    RepositoryBase<TestContext>(context), ICompanyRepository
 {
-    private ILogger<CompanyRepository> Logger { get; }
-
-    public CompanyRepository(
-        ILogger<CompanyRepository> logger,
-        TestContext context) : base(context)
-    {
-        Logger = logger;
-    }
+    private ILogger<CompanyRepository> Logger { get; } = logger;
 
     public async Task<CompanyTable?> CreateAsync(CompanyTable table)
     {

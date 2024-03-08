@@ -5,18 +5,14 @@ using Repository.Repositories;
 
 namespace Application.Services.Implementations;
 
-public sealed class SkillService : ISkillService
+public sealed class SkillService(
+    ISkillRepository repository,
+    ITechnologyService technologyService
+    ) : ISkillService
 {
-    private readonly ISkillRepository Repository;
-    private readonly ITechnologyService TechnologyService;
-    public SkillService(
-        ISkillRepository repository,
-        ITechnologyService technologyService
-    )
-    {
-        Repository = repository;
-        TechnologyService = technologyService;
-    }
+    private readonly ISkillRepository Repository = repository;
+    private readonly ITechnologyService TechnologyService = technologyService;
+
     public async Task<Skill?> CreateAsync(Skill skill)
     {
         var validReference = await ValidateReferenceAsync(skill);

@@ -6,17 +6,12 @@ using Repository.Tables;
 
 namespace Repository.Repositories.Implementations;
 
-public sealed class ProjectTechnologyRepository :
-    RepositoryBase<TestContext>, IProjectTechnologyRepository
+public sealed class ProjectTechnologyRepository(
+    ILogger<ProjectTechnologyRepository> logger,
+    TestContext context) :
+    RepositoryBase<TestContext>(context), IProjectTechnologyRepository
 {
-    private ILogger<ProjectTechnologyRepository> Logger { get; }
-
-    public ProjectTechnologyRepository(
-        ILogger<ProjectTechnologyRepository> logger,
-        TestContext context) : base(context)
-    {
-        Logger = logger;
-    }
+    private ILogger<ProjectTechnologyRepository> Logger { get; } = logger;
 
     public async Task<ProjectTechnologyTable?> CreateAsync(
         ProjectTechnologyTable table)

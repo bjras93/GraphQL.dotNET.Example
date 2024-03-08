@@ -6,25 +6,18 @@ using Repository.Tables;
 
 namespace Application.Services.Implementations;
 
-public sealed class ProjectService : IProjectService
+public sealed class ProjectService(
+    IProjectRepository repository,
+    ITechnologyRepository technologyRepository,
+    IProjectTechnologyRepository projectTechnologyRepository,
+    ILogger<ProjectService> logger
+    ) : IProjectService
 {
 
-    private readonly IProjectRepository Repository;
-    private readonly ITechnologyRepository TechnologyRepository;
-    private readonly IProjectTechnologyRepository ProjectTechnologyRepository;
-    private readonly ILogger<ProjectService> Logger;
-    public ProjectService(
-        IProjectRepository repository,
-        ITechnologyRepository technologyRepository,
-        IProjectTechnologyRepository projectTechnologyRepository,
-        ILogger<ProjectService> logger
-    )
-    {
-        Repository = repository;
-        TechnologyRepository = technologyRepository;
-        ProjectTechnologyRepository = projectTechnologyRepository;
-        Logger = logger;
-    }
+    private readonly IProjectRepository Repository = repository;
+    private readonly ITechnologyRepository TechnologyRepository = technologyRepository;
+    private readonly IProjectTechnologyRepository ProjectTechnologyRepository = projectTechnologyRepository;
+    private readonly ILogger<ProjectService> Logger = logger;
 
     public async Task<Project?> CreateAsync(Project project)
     {

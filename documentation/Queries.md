@@ -11,7 +11,10 @@ query {
         title,
         description,
         startDate,
-        endDate
+        endDate,
+        technologies{
+        	name
+        }
       },
       skills {
         name

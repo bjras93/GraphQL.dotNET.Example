@@ -73,3 +73,14 @@ mutation {
   }
 }
 ```
+- Replace `{PROJECT_ID}` with created project id
+- Replace `{REFERENCE_ID}` with created technology id
+```graphql
+mutation {
+  projects {
+    addProjectTechnology(projectTechnology: {technologyId: {REFERENCE_ID}, projectId: {PROJECT_ID}}) {
+      id
+    }
+  }
+}
+```
